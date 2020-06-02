@@ -22,3 +22,8 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, "db.html", {"greetings": greetings})
+
+
+def lucasteste(request):
+   # return HttpResponse('Hello n!')
+    return render(request, "lucasteste.html")
