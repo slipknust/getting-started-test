@@ -7,7 +7,7 @@ import requests
 
 # Create your views here.
 def index(request):
-   # return HttpResponse('Hello from Python!')
+   # return HttpResponse('Hello n!')
     return render(request, "index.html")
 #def index(request):
   #  r = requests.get('http://httpbin.org/status/418')
