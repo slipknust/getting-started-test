@@ -10,7 +10,7 @@ class Greeting(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    summary = RichTextField()
-    content = RichTextUploadingField()
+    summary = RichTextField(null=True)
+    content = RichTextUploadingField(null=True)
     author = models.ForeignKey(User, on_delete=models.PROTECT, null=True)
     created_at = models.DateField(auto_now_add=True)
