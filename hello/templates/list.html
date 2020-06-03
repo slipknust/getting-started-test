@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-offset-1 col-md-10 list-div">
+    <h1 class="luquinhas">Lista de Tarefas!</h1>
+    <div class="col-md-12 add-div">
+        <i class="fas fa-plus"></i> Adicionar tarefa
+    </div>
+    <br>
+    <br>
+    <div class="col-md-12 search-div">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o nome da tarefa para buscar:">
+        <i class="fas fa-search"></i>
+    </div>
+    <div class="col-md-12">
+        <ul class="task-list">
+            <li class="task-item">
+                <span>Titulo da tarefa</span>
+                <span><i class="fas fa-trash"></i> </span>
+                <span><i class="fas fa-edit"></i> </span>
+            </li>
+        </ul>
+        <ul class="task-list">
+            <li class="task-item">
+                <span>Titulo da tarefa</span>
+                <span><i class="fas fa-trash"></i> </span>
+                <span><i class="fas fa-edit"></i> </span>
+            </li>
+        </ul>
+        <ul class="task-list">
+            <li class="task-item">
+                <span>Titulo da tarefa</span>
+                <span><i class="fas fa-trash"></i> </span>
+                <span><i class="fas fa-edit"></i> </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

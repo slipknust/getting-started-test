@@ -27,3 +27,6 @@ def db(request):
 def lucasteste(request):
    # return HttpResponse('Hello n!')
     return render(request, "lucasteste.html")
+
+def list(request):
+    return render(request, "list.html")

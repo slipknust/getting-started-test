@@ -22,4 +22,5 @@ urlpatterns = [
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
     path("lucasteste/", hello.views.lucasteste, name="lucasteste"),
+    path("list/", hello.views.list, name="list"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
