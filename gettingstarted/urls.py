@@ -2,6 +2,9 @@ from django.urls import path, include
 
 from django.contrib import admin
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 admin.autodiscover()
 
 import hello.views
@@ -19,4 +22,4 @@ urlpatterns = [
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
     path("lucasteste/", hello.views.lucasteste, name="lucasteste"),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
