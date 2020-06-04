@@ -16,25 +16,14 @@
     </div>
     <div class="col-md-12">
         <ul class="task-list">
+            {% for taskfor in taskView1 %}
             <li class="task-item">
-                <span>Titulo da tarefa</span>
+                <span><a href="task/{{ taskfor.id }}">{{ taskfor.title }}</span>
                 <span><i class="fas fa-trash"></i> </span>
                 <span><i class="fas fa-edit"></i> </span>
             </li>
-        </ul>
-        <ul class="task-list">
-            <li class="task-item">
-                <span>Titulo da tarefa</span>
-                <span><i class="fas fa-trash"></i> </span>
-                <span><i class="fas fa-edit"></i> </span>
-            </li>
-        </ul>
-        <ul class="task-list">
-            <li class="task-item">
-                <span>Titulo da tarefa</span>
-                <span><i class="fas fa-trash"></i> </span>
-                <span><i class="fas fa-edit"></i> </span>
-            </li>
+
+            {% endfor %}
         </ul>
     </div>
 </div>

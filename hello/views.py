@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
-from .models import Greeting
+from .models import Greeting, Hello
 
 import requests
 
@@ -29,4 +29,9 @@ def lucasteste(request):
     return render(request, "lucasteste.html")
 
 def list(request):
-    return render(request, "list.html")
+    tasksSelect = Hello.objects.all()
+    return render(request, "list.html", {'taskView1': tasksSelect})
+
+def taskView(request, id):
+    task = get_object_or_404(Hello, pk=id)
+    return render(request, "tasks/task.html", {'task': task})
