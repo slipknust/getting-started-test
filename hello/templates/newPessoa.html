@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-offset-1 col-md-10 list-div">
+
+    <h1 class="luquinhas">Se cadastre aqui!</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-success" value="Adicionar pessoa">
+    </form>
+
+</div>
+
+
+{% endblock %}

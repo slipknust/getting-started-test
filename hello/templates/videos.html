@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-offset-1 col-md-10 column" style="background-color:#aaa;">
+      {% for videofor in video %}
+          <h2>{{ videofor.title }}</h2>
+          <p>{{ videofor.description }}</p>
+      {% endfor %}
+  </div>
+
+  <div class="col-md-offset-1 col-md-10 add-div" style="background-color:#yellow;">
+      <i class="fas fa-plus"></i> Adicionar Video
+
+  </div>
+</div>
+
+
+
+{% endblock %}

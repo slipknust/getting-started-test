@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 
-from .models import Greeting, Hello
+from .models import Greeting, Hello, Video, Pessoa
+from .forms import PessoaForm
 
 import requests
 
@@ -35,3 +36,22 @@ def list(request):
 def taskView(request, id):
     task = get_object_or_404(Hello, pk=id)
     return render(request, "tasks/task.html", {'task': task})
+
+def videos(request):
+    videoSelect = Video.objects.all()
+    return render(request, "videos.html", {'video': videoSelect})
+
+def pessoa(request):
+    return render(request, "pessoa.html")
+
+def newPessoa(request):
+    if request.method == 'POST':
+        form = PessoaForm(request.POST)
+
+        if form.is_valid():
+            pessoa = form.save()
+            return redirect('/pessoa')
+
+    else:
+        form = PessoaForm()
+        return render(request, "newPessoa.html", {'form': form})

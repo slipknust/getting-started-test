@@ -23,5 +23,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("lucasteste/", hello.views.lucasteste, name="lucasteste"),
     path("list/", hello.views.list, name="list"),
-    path("list/task/<int:id>", hello.views.taskView, name="task")
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("list/task/<int:id>", hello.views.taskView, name="task"),
+    path("videos/", hello.views.videos, name="videos"),
+    path("pessoa/", hello.views.pessoa, name="pessoa"),
+    path("newPessoa/", hello.views.newPessoa, name="new-pessoa"),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
